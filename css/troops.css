@@ -1,0 +1,305 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.troops-page-body {
+    background-color: #240640; 
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.troops-main-wrapper {
+    background-color: transparent;
+}
+
+.hero-troops {
+    height: 50vh;
+    min-height: 480px;
+    background: 
+        linear-gradient(
+            to bottom,
+            rgba(41, 8, 72, 0) 0%,
+            rgba(41, 8, 72, 0.4) 50%,
+            rgba(41, 8, 72, 0.5) 80%,
+            #290848 100%), 
+            url('../assets/troops/background 1.png') no-repeat center top / cover; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.hero-content h1 { 
+    font-family: 'Cinzel', 
+    serif; font-size: 3.5rem; 
+    margin-top: 5px; 
+    text-shadow: 0 4px 10px rgba(0,0,0,0.8);
+}
+
+.hero-content p { 
+    font-size: 1.1rem; 
+    color: #e9d8ff; 
+}
+
+.troops-section {
+    background-color: transparent;
+    padding: 100px 0 150px;
+}
+
+.troops-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    width: 100%; 
+    justify-items: stretch;
+}
+
+.troop-card {
+    width: 100%; 
+    height: 300px;
+    position: relative;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    background-color: #1a0b2e;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    cursor: pointer; 
+    transition: all 0.4s ease;
+    margin: 0;
+}
+
+.troop-card:hover {
+    box-shadow: 0 12px 35px rgba(168, 85, 247, 0.5); 
+    border-color: #a855f7;
+    transform: translateY(-5px); 
+}
+
+.troop-image {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    transition: transform 0.5s ease; 
+}
+
+.troop-card:hover .troop-image {
+    transform: scale(1.06);
+}
+
+.placeholder-img-1 {background-color: #2b1f3d;}
+.placeholder-img-2 {background-color: #1e1b29;}
+.placeholder-img-3 {background-color: #2a2238;}
+.placeholder-img-4 {background-color: #15101f;}
+.placeholder-img-5 {background-color: #381f2a;}
+.placeholder-img-6 {background-color: #232231;}
+.placeholder-img-7 {background-color: #261f36;}
+.placeholder-img-8 {background-color: #2a1f33;}
+.placeholder-img-9 {background-color: #1a1626;}
+.placeholder-img-10 {background-color: #312136;}
+.placeholder-img-11 {background-color: #242b36;}
+.placeholder-img-12 {background-color: #26293d;}
+
+.troop-details {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%;
+    z-index: 2;
+    padding: 30px 20px 20px;
+    background: linear-gradient(to top, rgba(41, 8, 72, 1) 30%, rgba(41, 8, 72, 0.8) 70%, transparent 100%);
+    transition: all 0.4s ease;
+}
+
+.troop-card h3 { 
+    font-family: 'Cinzel', serif; 
+    font-size: 1.3rem; 
+    margin-bottom: 4px; 
+    color: #fff; 
+    text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+}
+
+.troop-desc { 
+    font-family: 'Inter', sans-serif; 
+    font-size: 0.85rem; 
+    color: #a39cae; 
+    margin-bottom: 0; 
+    transition: margin-bottom 0.4s ease; 
+}
+
+.troop-stats {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.troop-card:hover .troop-stats {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 15px;
+}
+
+.troop-card:hover .troop-details {
+    background: linear-gradient(to top, rgba(41, 8, 72, 1) 75%, rgba(41, 8, 72, 0.95) 90%, transparent 100%);
+    padding-top: 20px;
+}
+
+.stat-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    font-size: 0.75rem;
+    padding: 8px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-family: 'Inter', sans-serif;
+}
+
+.stat-row:first-child {border-top: none;}
+
+.stat-item { 
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+    color: #d8b4fe; 
+}
+
+.icon-hp {color: #ff5e5e;}
+.icon-dps {color: #facc15;}
+.icon-role, .icon-type {color: #38bdf8;}
+.icon-shield, .icon-element {color: #60a5fa;}
+.icon-attack, .icon-aoe {color: #fb923c;}
+.icon-speed {color: #9ca3af;}
+.icon-range {color: #f472b6;}
+
+@media screen and (max-width: 1024px) {
+    .troops-grid {grid-template-columns: repeat(2, 1fr); gap: 25px;}
+}
+
+@media screen and (max-width: 768px) {
+    .logo {
+        position: relative;
+        z-index: 1000;
+    }
+
+    .hamburger {
+        display: flex;
+        z-index: 1000; 
+    }
+    
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+        background-color: #d69dff;
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+        background-color: #d69dff;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(8, 3, 15, 0.98);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 35px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease;
+        z-index: 998;
+    }
+
+    .nav-links.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-links li {
+        transform: translateY(20px);
+        opacity: 0;
+        transition: all 0.4s ease;
+    }
+
+    .nav-links.active li {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .nav-links a {
+        font-family: 'Cinzel', serif;
+        font-size: 2.2rem;
+        color: #a39cae;
+        letter-spacing: 3px;
+    }
+
+    .nav-links a.active-link, .nav-links a:hover {
+        color: #d69dff;
+        text-shadow: 0 0 20px rgba(214, 157, 255, 0.8);
+        border-bottom: none;
+    }
+
+    .nav-actions {
+        position: fixed;
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 25px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease;
+        z-index: 999;
+    }
+
+    .nav-actions.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .hero-content h1 {font-size: 2.2rem;}
+    
+    .troops-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 0 20px;
+    }
+    
+    .troop-card {height: 350px;}
+
+    footer {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        padding: 20px;
+    }
+    
+    footer p {
+        font-size: 0.65rem;
+        margin: 0;
+        white-space: nowrap;
+    }
+}

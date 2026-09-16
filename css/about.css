@@ -1,0 +1,509 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.about-page-body {
+    background: url('../assets/about/bg.png') no-repeat center center fixed;
+    background-size: cover; 
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.about-main-wrapper {
+    padding-top: 100px;
+    background: linear-gradient(to bottom, rgba(21, 5, 36, 0.7) 0%, rgba(21, 5, 36, 0.4) 50%, rgba(21, 5, 36, 0.8) 100%);
+    min-height: 100vh;
+}
+
+.about-hero {
+    height: 35vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.about-content {
+    max-width: 800px; 
+    padding: 0 20px;
+}
+
+.about-content h1 {
+    font-size: 3rem; 
+    font-family: 'Cinzel', serif; 
+    margin-bottom: 20px; 
+    text-shadow: 0 4px 15px rgba(0,0,0,0.8);
+}
+
+.about-content p {
+    font-size: 1.1rem; 
+    color: #e9d8ff; 
+    line-height: 1.6;
+}
+
+.timeline-section {
+    padding: 50px 20px 80px; 
+    text-align: center; 
+    max-width: 1000px; 
+    margin: 0 auto; 
+}
+
+.timeline-section h2 {
+    font-size: 2.2rem; 
+    margin-bottom: 60px; 
+    font-family: 'Cinzel', serif; 
+}
+
+.timeline {
+    position: relative; 
+    max-width: 900px; 
+    margin: auto; 
+}
+
+.timeline::after {
+    content: ''; 
+    position: absolute; 
+    width: 4px; 
+    background: rgba(168, 85, 247, 0.5); 
+    top: 0; 
+    bottom: 0; 
+    left: 50%; 
+    margin-left: -2px; 
+}
+
+.timeline-item {
+    padding: 10px 40px; 
+    position: relative; 
+    width: 50%; 
+}
+
+.timeline-item::after { 
+    content: ''; 
+    position: absolute; 
+    width: 20px; 
+    height: 20px; 
+    background: #c084fc; 
+    border: 4px solid #1b053a; 
+    top: 20px; 
+    border-radius: 50%; 
+    z-index: 1; 
+}
+
+.left {left: 0;}
+.right {left: 50%;}
+.left::after {right: -12px; }
+.right::after {left: -12px;}
+
+.timeline-content {
+    padding: 25px; 
+    background: rgba(35, 11, 61, 0.8); 
+    border-radius: 12px; 
+    border: 1px solid rgba(255,255,255,0.1); 
+    text-align: left; 
+    transition: 0.3s; 
+    backdrop-filter: blur(5px);
+}
+
+.timeline-content h3 {
+    margin-bottom: 8px; 
+    font-family: 'Cinzel', serif; 
+    color: #ffffff; 
+    font-size: 1.1rem; 
+}
+
+.timeline-content p {
+    color: #a39cae; 
+    line-height: 1.5; 
+    font-size: 0.9rem; 
+    margin: 0; 
+}
+
+.active-timeline {
+    border-color: #facc15; 
+    box-shadow: 0 0 15px rgba(250, 204, 21, 0.2);
+}
+
+.active-timeline h3 {color: #facc15;}
+
+.realm-card, .creator-card {
+    position: relative;
+    background: rgba(35, 11, 61, 0.95);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    cursor: default;
+}
+
+.realm-icon {color: #c084fc;}
+
+.card-front, .card-back {
+    transition: opacity 0.4s ease;
+    width: 100%;
+    height: 100%;
+}
+
+.card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #28104e;
+    padding: 30px 20px;
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.realm-card:hover .card-front, .creator-card:hover .card-front {
+    opacity: 0;
+}
+.realm-card:hover .card-back, .creator-card:hover .card-back {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.realm-card:hover, .creator-card:hover {
+    border-color: #a855f7;
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+}
+
+.realm-section {
+    padding: 40px; 
+    text-align: center; 
+    max-width: 1200px; 
+    margin: 0 auto;
+}
+
+.realm-section h2 {
+    font-size: 2.2rem; 
+    font-family: 'Cinzel', serif;
+}
+
+.realm-subtitle {
+    margin-top: 5px; 
+    color: #a39cae; 
+    margin-bottom: 40px;
+}
+
+.realm-cards {
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px;
+}
+
+.realm-card {min-height: 360px;}
+
+.card-front img {
+    width: 100%; 
+    height: 200px; 
+    object-fit: cover;
+}
+
+.realm-info {
+    padding: 20px; 
+    text-align: left;
+}
+
+.realm-info h3 {
+    font-family: 'Cinzel', serif; 
+    color: #ffffff; 
+    font-size: 1.1rem; 
+    margin-bottom: 8px;
+}
+
+.realm-info p {
+    color: #a39cae; 
+    line-height: 1.5; 
+    font-size: 0.85rem; 
+}
+
+.realm-card .card-back {
+    text-align: center; 
+    justify-content: center; 
+}
+
+.realm-card .card-back h3 {
+    font-family: 'Cinzel', serif; 
+    color: #ffffff; font-size: 1.2rem; 
+    margin-bottom: 15px; 
+}
+
+.realm-card .card-back p {
+    color: #d8b4fe; 
+    line-height: 1.6; 
+    font-size: 0.85rem;
+}
+
+.creator-section {
+    padding: 60px 40px 100px; 
+    text-align: center; 
+    max-width: 1200px; 
+    margin: 0 auto;
+}
+
+.creator-section h2 {
+    font-size: 2.2rem; 
+    font-family: 'Cinzel', serif;
+}
+
+.creator-subtitle {
+    margin-top: 5px; 
+    color: #a39cae; 
+    margin-bottom: 40px;
+}
+
+.creator-grid {
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 25px;
+}
+
+.creator-card {min-height: 280px;}
+
+.creator-card .card-front {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+}
+
+.creator-card .card-front img {
+    width: 100px; 
+    height: 100px; 
+    object-fit: contain; 
+    margin-bottom: 15px;
+}
+
+.creator-card .card-front h3 {
+    font-family: 'Cinzel', serif; 
+    margin-bottom: 10px; 
+    font-size: 1.1rem;
+}
+
+.role-pill { 
+    background: rgba(168, 85, 247, 0.2); 
+    border: 1px solid #a855f7; 
+    color: #d8b4fe; 
+    padding: 4px 15px; 
+    border-radius: 20px; 
+    font-size: 0.75rem; 
+}
+
+.creator-card .card-back {
+    text-align: left;
+    padding: 30px 25px;
+}
+.creator-card .card-back h3 { 
+    font-family: 'Cinzel', serif; 
+    font-size: 1rem; 
+    margin-bottom: 15px; 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+}
+.small-icon {
+    width: 30px; 
+    height: 30px; 
+    object-fit: contain;
+}
+
+.creator-card .card-back p {
+    color: #a39cae; 
+    line-height: 1.6; 
+    font-size: 0.85rem;
+}
+
+@media screen and (max-width: 1024px) {
+    .realm-cards {grid-template-columns: repeat(2, 1fr);}
+    .creator-grid {grid-template-columns: repeat(2, 1fr);}
+}
+
+@media screen and (max-width: 768px) {
+    .logo {
+        position: relative;
+        z-index: 1000;
+    }
+
+    .hamburger {
+        display: flex;
+        z-index: 1000;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+        background-color: #d69dff;
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+        background-color: #d69dff;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(8, 3, 15, 0.98);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 35px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease;
+        z-index: 998;
+    }
+
+    .nav-links.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-links li {
+        transform: translateY(20px);
+        opacity: 0;
+        transition: all 0.4s ease;
+    }
+
+    .nav-links.active li {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .nav-links a {
+        font-family: 'Cinzel', serif;
+        font-size: 2.2rem;
+        color: #a39cae;
+        letter-spacing: 3px;
+    }
+
+    .nav-links a.active-link, .nav-links a:hover {
+        color: #d69dff;
+        text-shadow: 0 0 20px rgba(214, 157, 255, 0.8);
+        border-bottom: none;
+    }
+
+    .nav-actions {
+        position: fixed;
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 25px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease;
+        z-index: 999;
+    }
+
+    .nav-actions.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .about-main-wrapper {
+        padding-top: 80px;
+    }
+
+    .about-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .timeline-section h2, .realm-section h2, .creator-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .timeline::after {
+        left: 30px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 80px;
+        padding-right: 20px;
+    }
+
+    .timeline-item.right {
+        left: 0;
+    }
+
+    .timeline-item.left::after, .timeline-item.right::after {
+        left: 18px;
+    }
+
+    .realm-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .realm-card {
+        min-height: 300px;
+    }
+
+    .creator-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0 20px;
+    }
+
+    .creator-card {
+        aspect-ratio: auto;
+        min-height: auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        gap: 15px;
+    }
+
+    .creator-card img {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+        flex-shrink: 0;
+    }
+
+    .creator-card h3 {
+        font-size: 0.9rem;
+        margin-bottom: 4px;
+    }
+
+    .creator-card p {
+        font-size: 0.7rem;
+        line-height: 1.4;
+        margin: 0;
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        padding: 20px;
+    }
+
+    footer p {
+        font-size: 0.65rem;
+        margin: 0;
+        white-space: nowrap;
+    }
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clash of BaNG - Home</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <h1 class="logo">CLASH OF BaNG</h1>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="home.html" class="active-link">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="troops.html">Troops</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+            <div class="nav-actions" id="nav-actions">
+                <button class="join-btn" onclick="window.location.href='register.html'">Join Guild</button>
+                <span class="icon">&#128276;</span> 
+                <span class="icon">&#128100;</span> 
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <p class="small-title">New Season: The Prismatic Dawn</p>
+            <h1>Clash of BaNG</h1>
+            <p>
+                Gather your heroes, fortify your floating keep, and engage in epic, friendly 
+                skirmishes across the enchanted realms. The magic awaits.
+            </p>
+            <div class="hero-buttons">
+                <button class="primary-btn" onclick="window.open('https://play.google.com/store/apps/details?id=com.spcomes.stormdefense&hl=id', '_blank')">Play Now Free</button>
+                <button class="secondary-btn" onclick="window.open('https://youtu.be/u1oqfdh4xBY?si=Z2L9ejDWWXyYHnqM', '_blank')">Watch Trailer</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="about-troops-section">
+        
+        <section class="about" id="about">
+            <div class="about-content">
+                <h2>About Clash of BaNG</h2>
+                <p>
+                    Clash of BaNG is a fantasy gaming community founded in 2018 by strategy game enthusiasts who share a passion for Dark Troops, hero tactics, and clan battles. 
+                    Originally started as a small online forum, the community has grown into regional hubs across Jakarta Enclave, Bandung Highlands, and Sanur Outpost, providing troop guides, 
+                    fan artwork, beginner tutorials, and clan activities for players around the world.
+                </p>
+                <a href="about.html" class="learn-more">Learn More About Our Community</a>
+            </div>
+        </section>
+
+        <section class="popular-troops">
+            <h2>Most Popular Troops</h2>
+            <div class="troops-carousel-container">
+                <div class="troop-card active">
+                    <img src="assets/home/Eldritch Golem.png" alt="Eldritch Golem">
+                    <div class="troop-name">Eldritch Golem</div>
+                </div>
+                <div class="troop-card next">
+                    <img src="assets/home/Chaos Dragon.png" alt="Chaos Dragon">
+                    <div class="troop-name">Chaos Dragon</div>
+                </div>
+                <div class="troop-card prev">
+                    <img src="assets/home/Void Knight.png" alt="Void Knight">
+                    <div class="troop-name">Void Knight</div>
+                </div>
+            </div>
+        </section>
+
+    </div> 
+    
+    <section class="latest-updates">
+        <h2>Latest Game Updates</h2>
+        <div class="updates-wrapper">
+            <button class="nav-arrow left-arrow">&#8249;</button>
+            
+            <div class="updates-carousel-container">
+                <div class="update-card hidden">
+                    <img src="assets/home/Season.png" alt="Clan Wars Season Start">
+                </div>
+                <div class="update-card prev">
+                    <img src="assets/home/Eldritch Golemm.png" alt="Eldritch Golem">
+                </div>
+                <div class="update-card active">
+                    <img src="assets/home/Dark Season.png" alt="Dark Season Begin">
+                </div>
+                <div class="update-card next">
+                    <img src="assets/home/Prismatic.png" alt="Prismatic Dawn">
+                </div>
+                <div class="update-card hidden">
+                    <img src="assets/home/Mystic Archer.png" alt="Mystic Archer">
+                </div>
+            </div>
+
+            <button class="nav-arrow right-arrow">&#8250;</button>
+        </div>
+        <div class="dots-container">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026. All rights reserved. Protected under international copyright law.</p>
+        <div class="social-icons">
+            <a href="#" target="_blank"><img src="https://img.icons8.com/?size=100&id=85154&format=png&color=000000" alt="Instagram"></a>
+            <a href="#" target="_blank"><img src="https://img.icons8.com/?size=100&id=Funux8t3F8Ig&format=png&color=000000" alt="WhatsApp"></a>
+            <a href="#" target="_blank"><img src="https://img.icons8.com/?size=100&id=118487&format=png&color=000000" alt="Facebook"></a>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
